@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Namoro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            color: #ff6b6b;
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.2rem;
+            margin: 15px 0;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .no {
+            background-color: #f44336;
+            color: white;
+            position: relative;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        .no:hover {
+            position: absolute;
+            top: calc(50% + (Math.random() * 200px - 100px));
+            left: calc(50% + (Math.random() * 200px - 100px));
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Quer namorar comigo? 💖</h1>
+        <p>Prometo ser a melhor escolha da sua vida! 😘</p>
+        <div class="buttons">
+            <button class="yes" onclick="openVideo()">Sim</button>
+            <button class="no">Não</button>
+        </div>
+    </div>
+    <script>
+        function openVideo() {
+            const youtubeLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Substitua pelo link do vídeo desejado
+            window.open(youtubeLink, "_blank"); // Abre o link em uma nova aba
+        }
+
+        document.querySelector('.no').addEventListener('mouseover', function () {
+            this.style.top = `${Math.random() * (window.innerHeight - 50)}px`;
+            this.style.left = `${Math.random() * (window.innerWidth - 100)}px`;
+        });
+    </script>
+</body>
+</html>
