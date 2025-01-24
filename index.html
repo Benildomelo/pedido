@@ -64,8 +64,7 @@
 </head>
 <body>
     <div class="card">
-        <h1>Quer namorar comigo? 💖</h1>
-        <p>Prometo ser a melhor escolha da sua vida! 😘</p>
+        <h1>Mano tu é gay? </h1>
         <div class="buttons">
             <button class="yes" onclick="openVideo()">Sim</button>
             <button class="no">Não</button>
@@ -73,14 +72,21 @@
     </div>
     <script>
         function openVideo() {
-            const youtubeLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"; // Substitua pelo link do vídeo desejado
+            const youtubeLink = "https://www.youtube.com/watch?v=9qIfFvOD2Mc"
             window.open(youtubeLink, "_blank"); // Abre o link em uma nova aba
         }
 
-        document.querySelector('.no').addEventListener('mouseover', function () {
-            this.style.top = `${Math.random() * (window.innerHeight - 50)}px`;
-            this.style.left = `${Math.random() * (window.innerWidth - 100)}px`;
-        });
+        document.querySelector('.no').addEventListener('mouseover', moveButton)
+        document.querySelector('.no').addEventListener('touchstart',moveButton);
+        function moveButton() {
+            const button = this;
+            const newTop = Math.random() * (window.innerHeight - button.offsetHeight);
+            const newLeft = Math.random() * (window.innerWidth - button.offsetWidth);
+
+            button.style.position = 'absolute';
+            button.style.top = `${newTop}px`;
+            button.style.left = `${newLeft}px`;
+        };
     </script>
 </body>
 </html>
